@@ -1,0 +1,24 @@
+package ca.scotthyndman.bike.data;
+
+option java_outer_classname = "DataProtos";
+
+message Point {
+	required int64 id 			= 1;
+	optional double latitude 	= 2;
+	optional double longitude 	= 3;
+	optional double altitude 	= 4;
+	optional float bearing 		= 5;
+	optional float temperature	= 6;
+	optional int64 timeStamp 	= 7;
+}
+
+message Photo {
+	required int64 id			= 1;
+	optional string name		= 2;
+	optional bytes contents		= 3;
+}
+
+message UploadPackage {
+	repeated Point points 		= 1;
+	repeated Photo photos		= 2;
+}
