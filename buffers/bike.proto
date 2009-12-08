@@ -9,16 +9,18 @@ message Point {
 	optional double altitude 	= 4;
 	optional float bearing 		= 5;
 	optional float temperature	= 6;
-	optional int64 timeStamp 	= 7;
+	optional int64 ts		 	= 7;
 }
 
 message Photo {
-	required int64 id			= 1;
-	optional string name		= 2;
+	optional string caption		= 2;
 	optional bytes contents		= 3;
+	optional int64 ts			= 4;
 }
 
-message UploadPackage {
+message Post {
 	repeated Point points 		= 1;
 	repeated Photo photos		= 2;
+	optional string title		= 3;
+	optional string body		= 4;
 }
